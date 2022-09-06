@@ -1,21 +1,12 @@
-name: run my vanilla Cypress tests
-on: 
-  push:
-    branches:
-      - 'main'
-  workflow_dispatch:
-
+name: End-to-end tests
+on: [push]
 jobs:
-  checkout-and-test:
+  cypress-run:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
-
-      - name: Check out repository code
+      - name: Checkout
         uses: actions/checkout@v2
-
-      - name: npm install
-        run: npm install
-
-      - name: cypress run
-        run: npm run cy:run
+      # Install NPM dependencies, cache them correctly
+      # and run all Cypress tests
+      - name: Cypress run
+        uses: cypress-io/github-action@v4
