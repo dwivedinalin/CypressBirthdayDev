@@ -5,6 +5,7 @@ export default class HomePage extends BasePage{
     static LoadHomePage(){
         cy.visit('https://birthday.dev/')
     }
+    
 
     static VerifyHeader(){
         cy.get('*[class^="relative cursor-pointer w-[100px] h-[52px] sm:w-[150px] sm:h-[78px]"]').should("have.text",'')
