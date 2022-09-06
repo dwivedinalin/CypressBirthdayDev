@@ -9,6 +9,8 @@ jobs:
       # Install NPM dependencies, cache them correctly
       # and run all Cypress tests
       - name: Install Cypress
-        run: npm ci
-      - name: Cypress run
-        run: npm run cy:run
+        run: |
+            npm ci
+            npm-install-peers
+            npm run cy:run
+         
