@@ -16,6 +16,6 @@ jobs:
 
       - name: npm install
         run: npm install
-        
+
       - name: cypress run
         run: npm run cy:run
